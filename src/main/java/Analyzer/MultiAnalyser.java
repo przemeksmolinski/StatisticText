@@ -1,6 +1,6 @@
 package Analyzer;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
@@ -82,25 +82,19 @@ public class MultiAnalyser implements Analyzer{
         return max;
     }
 
-    public static String[] readingFromFile(String input)
-    {
-        String[] arr = null;
-        try {
-            FileReader reader = new FileReader(input);
-            Scanner sc = new Scanner(reader);
+    public void readFile(String filePath) throws IOException {
+    FileReader fileReader = new FileReader(filePath);
+    BufferedReader bufferedReader = new BufferedReader(fileReader);
+  try {
+        String textLine = bufferedReader.readLine();
+        do {
+            System.out.println(textLine);
 
-            while(sc.hasNextLine())
-            {
-                arr = arr == null ? new String[1] : Arrays.copyOf(arr, arr.length + 1);
-                arr[arr.length - 1] = sc.nextLine();
-            }
-            sc.close();
-            reader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return arr;
+            textLine = bufferedReader.readLine();
+        } while (textLine != null);
+    } finally {
+        bufferedReader.close();
+    }
+
     }
 }
