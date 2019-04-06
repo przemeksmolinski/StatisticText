@@ -1,8 +1,6 @@
 package Analyzer;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class MultiAnalyser implements Analyzer{
@@ -82,19 +80,18 @@ public class MultiAnalyser implements Analyzer{
         return max;
     }
 
-    public void readFile(String filePath) throws IOException {
-    FileReader fileReader = new FileReader(filePath);
-    BufferedReader bufferedReader = new BufferedReader(fileReader);
-  try {
-        String textLine = bufferedReader.readLine();
-        do {
-            System.out.println(textLine);
+    public String readFile(String filePath){
 
-            textLine = bufferedReader.readLine();
-        } while (textLine != null);
-    } finally {
-        bufferedReader.close();
-    }
-
+        File plikDane = new File(filePath);
+        String input = "";
+        try {
+            Scanner skaner = new Scanner(plikDane);
+            while (skaner.hasNextLine()) {
+                input = input + skaner.nextLine() + "\n";
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Brak Pliku do odczytania!");
+        }
+        return input;
     }
 }

@@ -1,17 +1,20 @@
 import Analyzer.MultiAnalyser;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-   public static void main(String[] args)  {
+   public static void main(String[] args){
 
        MultiAnalyser multiAnalyser = new MultiAnalyser();
-       String input = "Ala ma kota a kot ma Ale dupa krowa kot kot bak lalala pewpewp dasd das adsdasdsa dsadasdasdasdasd ddddddddd ssssssssssssssssssssssssss nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn";
+       String input = "Ala ma kota a kot ma Ale krowa kot kot bak lalala pewpewp dasd das adsdasdsa dsadasdasdasdasd ddddddddd ssssssssssssssssssssssssss nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn";
+//       String input = "input.txt";
+//
+//       String odczytanyTekst = multiAnalyser.readFile(input);
+//
+       //String input[] = multiAnalyser.readFile("input.txt");
 
-       //String input = multiAnalyser.readFile("input.txt");
        System.out.println("Choose one option:  (1 = numberOfWords; 2 = frequencyOfLetters; 3 = longestWords; 4 = tenLongestWords;" +
                "5 = mostPopularWords");
        Scanner scanner = new Scanner(System.in);
