@@ -82,15 +82,15 @@ public class MultiAnalyser implements Analyzer{
 
     public String readFile(String filePath){
 
-        File plikDane = new File(filePath);
+        File file = new File(filePath);
         String input = "";
         try {
-            Scanner skaner = new Scanner(plikDane);
-            while (skaner.hasNextLine()) {
-                input = input + skaner.nextLine() + "\n";
+            Scanner scaner = new Scanner(file);
+            while (scaner.hasNextLine()) {
+                input = input + scaner.nextLine() + "\n";
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Brak Pliku do odczytania!");
+            System.out.println("null");
         }
         return input;
     }
