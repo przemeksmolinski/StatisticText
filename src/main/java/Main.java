@@ -8,12 +8,10 @@ public class Main {
    public static void main(String[] args){
 
        MultiAnalyser multiAnalyser = new MultiAnalyser();
-       String input = "Ala ma kota a kot ma Ale krowa kot kot bak lalala pewpewp dasd das adsdasdsa dsadasdasdasdasd ddddddddd ssssssssssssssssssssssssss nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn";
-//       String input = "input.txt";
-//
-//       String odczytanyTekst = multiAnalyser.readFile(input);
-//
-       //String input[] = multiAnalyser.readFile("input.txt");
+       //String input = "Ala ma kota a kot ma Ale krowa kot kot bak lalala pewpewp dasd das adsdasdsa dsadasdasdasdasd ddddddddd ssssssssssssssssssssssssss nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn";
+      String input = "input.txt";
+
+       String readText = multiAnalyser.readFile(input);
 
        System.out.println("Choose one option:  (1 = numberOfWords; 2 = frequencyOfLetters; 3 = longestWords; 4 = tenLongestWords;" +
                "5 = mostPopularWords");
@@ -22,10 +20,10 @@ public class Main {
 
        switch (chooseOption){
            case 1:
-               System.out.println("Number of words: " + multiAnalyser.numberOfWords(input));
+               System.out.println("Number of words: " + multiAnalyser.numberOfWords(readText));
                break;
            case 2: {
-               int tab[] = multiAnalyser.frequencyOfLetters(input);
+               int tab[] = multiAnalyser.frequencyOfLetters(readText);
                for (int i = 0; i < tab.length; i++) {
                    if (tab[i] > 0) {
                        System.out.println((char) i + " " + tab[i]);
@@ -35,13 +33,13 @@ public class Main {
                break;
            }
            case 3:
-               System.out.println("Longest words: " + multiAnalyser.longestWords(input));
+               System.out.println("Longest words: " + multiAnalyser.longestWords(readText));
                break;
            case 4:
-               System.out.println(multiAnalyser.tenLongestWords(input));
+               System.out.println(multiAnalyser.tenLongestWords(readText));
                break;
            case 5:
-               System.out.println(multiAnalyser.mostPopularWords(input));
+               System.out.println(multiAnalyser.mostPopularWords(readText));
 
        }
 

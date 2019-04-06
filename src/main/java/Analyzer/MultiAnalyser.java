@@ -14,7 +14,7 @@ public class MultiAnalyser implements Analyzer{
         if (input == ""){
             return 0;
         }
-        String[] words = input.split(" ");
+        String[] words = input.split("\\s");
         int numberOfWords = words.length;
         return  numberOfWords;
     }
@@ -29,7 +29,7 @@ public class MultiAnalyser implements Analyzer{
     }
 
     public String longestWords(String input){
-        String arr[] = input.split(" ");
+        String arr[] = input.split("\\s");
 
         String max = arr[0];
         for (int i = 0; i < arr.length; i++) {
@@ -43,7 +43,7 @@ public class MultiAnalyser implements Analyzer{
 
 
     public Set<String> tenLongestWords(String input){
-        String arr[] = input.split(" ");
+        String arr[] = input.split("\\s");
         Set<String> longestWords = new TreeSet<>(new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
