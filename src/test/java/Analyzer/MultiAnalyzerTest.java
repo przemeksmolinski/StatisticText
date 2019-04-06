@@ -13,7 +13,7 @@ public class MultiAnalyzerTest {
     }
 
 //    @Test
-//    public void rozkladTest(){
+//    public void frequencyOfLetters(){
 //        MultiAnalyser multiAnalyser = new MultiAnalyser();
 //        String input = "Ala ma kota a kot ma Ale";
 //

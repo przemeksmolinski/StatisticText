@@ -48,20 +48,3 @@ public class Main {
 
 
    }
-
-////
-////        MultiAnalyser multiAnalyser = new MultiAnalyser();
-////        String tekst = "Ala ma kota a kot ma Ale";
-////
-
-//        MultiAnalyser multiAnalyser = new MultiAnalyser();
-//        String tekst = "Ala ma kota a kot ma Ale";
-//        int tab[] = multiAnalyser.frequencyDistributionOfLetters(tekst);
-//        for (int i=0;i<tab.length;i++){
-//            if (tab[i]>0){
-//                System.out.println((char)i+" "+tab[i]);
-//            }
-//        }
-//        multiAnalyser.mostPopularWords(tekst);
-//    }
-//}
